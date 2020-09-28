@@ -1,7 +1,7 @@
-require 'spec_helper'
-require 'gds_zendesk/test_helpers'
-require 'gds_zendesk/client'
-require 'null_logger'
+require "spec_helper"
+require "gds_zendesk/test_helpers"
+require "gds_zendesk/client"
+require "null_logger"
 
 module GDSZendesk
   describe Client do
@@ -17,12 +17,12 @@ module GDSZendesk
 
     it "should raise an error if no username is provided" do
       expect { Client.new(password: "abc") }.to raise_error(ArgumentError,
-        /username not provided/)
+                                                            /username not provided/)
     end
 
     it "should raise an error if no password is provided" do
       expect { Client.new(username: "abc") }.to raise_error(ArgumentError,
-        /password not provided/)
+                                                            /password not provided/)
     end
 
     it "should use a null logger if no logger has been provided" do
